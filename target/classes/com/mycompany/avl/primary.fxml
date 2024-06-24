@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.avl.PrimaryController">
+   <children>
+      <MenuBar layoutX="61.0" layoutY="49.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Arcivo">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Abiri" />
+                  <MenuItem mnemonicParsing="false" text="Guardar" />
+                  <MenuItem mnemonicParsing="false" text="Crear" />
+                  <MenuItem mnemonicParsing="false" text="Eliminar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edicion">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Agregar" />
+                  <MenuItem mnemonicParsing="false" text="Eliminar" />
+                  <MenuItem mnemonicParsing="false" text="Editar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Acerca de" />
+                  <MenuItem mnemonicParsing="false" text="Instrucciones de uso" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.18729096989966554" layoutX="44.0" layoutY="62.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TreeView fx:id="treeview" layoutX="-55.0" layoutY="61.0" onMouseClicked="#selectItem" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <contextMenu>
+                        <ContextMenu>
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#crearDB" text="Crear DB" />
+                              <MenuItem mnemonicParsing="false" onAction="#eliminarDB" text="Eliminar DB" />
+                              <MenuItem mnemonicParsing="false" onAction="#crearTabla" text="Crear Tabla" />
+                              <MenuItem mnemonicParsing="false" onAction="#eliminarTabla" text="Eliminar Tabla" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu></TreeView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="tvDatos" editable="true" prefHeight="374.0" prefWidth="417.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <contextMenu>
+                        <ContextMenu>
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Agregar" />
+                              <MenuItem mnemonicParsing="false" text="Eliminar" />
+                              <MenuItem mnemonicParsing="false" text="Editar" />
+                           </items>
+                        </ContextMenu>
+                     </contextMenu>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
